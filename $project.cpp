@@ -17,7 +17,7 @@ int _tmain(int argc, const TCHAR* const argv[])
 
 int WINAPI _tWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPTSTR lpCmdLine, _In_ int nShowCmd)
 {
-	MessageBox(NULL, _T("Hello World"), _T("Simple Project"), MB_OK | MB_ICONINFORMATION);
+	MessageBox(NULL, _T("Hello World"), _T("$project"), MB_OK | MB_ICONINFORMATION);
 	return 0;
 }
 #endif
