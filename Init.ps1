@@ -1,4 +1,5 @@
 $project = $args[0]
+$this = "Init.ps1"
 if ($project -eq $null) {
     Write-Output "Init.ps1 [project]"
 }
@@ -6,7 +7,7 @@ else {
     [string] $rootPathForFiles = "."
     [string[]] $listOfFilesToRename = Get-ChildItem -Path $rootPathForFiles -File
     $listOfFilesToRename | ForEach-Object {
-        if ($_ -ne "Init.ps1") {
+        if ($_ -ne $this) {
             $oldContent = Get-Content -Path $_
             $newContent = $oldContent
             $newContent = $newContent -replace "\`$project", "$project"
@@ -24,4 +25,5 @@ else {
             }
         }
     }
+    Remove-Item -Path $this
 }
